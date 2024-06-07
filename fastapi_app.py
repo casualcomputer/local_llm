@@ -50,3 +50,9 @@ async def query_llm(request: QueryRequest):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+# Template for sending a request 
+# curl -X POST "http://localhost:8000/query" -H "Content-Type: application/json" -d "{\"question\": \"Name the planets in the solar system?\"}"
+
+# To create a public url (in this case https://fb44-2606-40-408-2d3-00-460-439d.ngrok-free.app/query) and forward it to local port 8000, install grok from cmd and type (ngrok http 8000)
+# curl -X POST "https://fb44-2606-40-408-2d3-00-460-439d.ngrok-free.app/query" -H "Content-Type: application/json" -d "{\"question\": \"Name the planets in the solar system?\"}"
