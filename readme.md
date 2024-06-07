@@ -1,4 +1,4 @@
-# A Tutorial on deploying a local LLM 
+# A Tutorial on deploying a local LLM: A FastAPI server to expose a local LLM to the public internet
 
 We will demonstrate 1) setting up a local LLM, and 2) configuring a FastAPI server to expose a local LLM to the public internet for inference using port forwarding.
 
@@ -141,11 +141,12 @@ Different models require different prompting templates. For detailed guidance on
 If you find this tutorial helpful, please consider citing this GitHub page:
 
 ```markdown
-  @misc{A Tutorial on deploying a local LLM,
+    @misc{local-llm-inference,
     author = {Henry Luan},
-    title = {local-llm-inference: A FastAPI server to expose a local LLM to the public internet},
+    title = {A Tutorial on deploying a local LLM: A FastAPI server to expose a local LLM to the public internet},
     year = {2024},
     howpublished = {\url{https://github.com/casualcomputer/local_llm}},
   }
+
 ```
 
