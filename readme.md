@@ -98,11 +98,11 @@ python -m pip install llama-cpp-python==0.2.7 --prefer-binary --extra-index-url=
 
 Reference: [private-gpt issue 1242](https://github.com/zylon-ai/private-gpt/issues/1242)
 
-# Step 4: Run Your Inference Pipeline and Check for BLAS=1
+# Tutorial 1: Run Your Inference Pipeline and Check for BLAS=1
 
   ![Simple interface photo](img/simple_interface.png)
 
-Ensure BLAS=1 appears in the output to confirm GPU acceleration. In experiments, inference time reduced from ~70 seconds to ~1-3 seconds due to GPU acceleration.
+Run "simple_interface.py". Ensure BLAS=1 appears in the output to confirm GPU acceleration. In experiments, inference time reduced from ~70 seconds to ~1-3 seconds due to GPU acceleration.
 
   ![Verify BLAS=1](img/blas_1.png)
 
@@ -123,3 +123,7 @@ If you need to load a model larger than your VRAM, use these techniques:
   output = llm(..., max_tokens=512)
   ```
 Different models require different prompting templates. For detailed guidance on mistral-7b prompting, refer to the [Prompting Guide](https://www.promptingguide.ai/models/mistral-7b).
+
+# Tutorial 2: Exposing your local LLM to the Public Internet
+
+* Run "fastapi_app.py" & follow the instructions in the comments to install grok, to set up port forwarding from grok's public url to your local port 8000.
