@@ -1,8 +1,3 @@
----
-title: "Set up local LLM: GPU-accelerated inference"
-author: "Generated on `r Sys.Date()`"
-output: html_document
----
 
 # Step 0: Download Your Language Model
 
