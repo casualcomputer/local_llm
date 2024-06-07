@@ -31,7 +31,7 @@ async def query_llm(request: QueryRequest):
         # Run the model to get the response
         output = llm(
             prompt,  # Prompt
-            max_tokens=2000,  # Generate up to 32 tokens
+            max_tokens=2000,  # Generate up to 2000 tokens
             stop=["Q:", "\n"],  # Stop generating just before the model would generate a new question
             echo=False  # Do not echo the prompt back in the output
         )
