@@ -1,5 +1,14 @@
+# A Tutorial on deploying a local LLM 
 
-# Step 0: Download Your Language Model
+We will demonstrate 1) setting up a local LLM, and 2) configuring a FastAPI server to expose a local LLM to the public internet for inference using port forwarding.
+
+## Features
+- Deploy LLM models locally with FastAPI
+- Enable remote access via port forwarding
+- Handle multiple simultaneous queries
+
+## Detailed Steps
+### Step 0: Download Your Language Model
 
 ![Project structure](img/project_folder_structure.png)
 
@@ -18,13 +27,13 @@ model_path = hf_hub_download(model_name, filename=model_file, local_dir='models/
 print("Model path:", model_path)
 ```
 
-# Step 1: Install Necessary Tools in VS Code
+### Step 1: Install Necessary Tools in VS Code
 
 - C++ CMake tools for Windows
 - C++ core features
 - Windows 10/11 SDK
 
-# Step 2: Install CUDA Toolkit 11.7 and Verify Installation
+### Step 2: Install CUDA Toolkit 11.7 and Verify Installation
 
 Download and install [CUDA Toolkit 11.7](https://developer.nvidia.com/cuda-11-7-0-download-archive).
 
@@ -54,7 +63,7 @@ except ImportError as e:
     print("Error importing numpy.distutils.system_info:", e)
 ```
 
-## Verify GPU Information with `nvidia-smi`
+#### Verify GPU Information with `nvidia-smi`
 
 Type **`nvidia-smi`** in the VS Code terminal:
 
@@ -63,18 +72,18 @@ Type **`nvidia-smi`** in the VS Code terminal:
 - **PCI Address**: 00000000:01:00.0
 - **Power State**: Off
 
-### Temperature and Power
+##### Temperature and Power
 - **Temperature**: 49°C
 - **Power Usage**: 29W / 135W (Max)
 
-### Memory Usage
+##### Memory Usage
 - **Total Memory**: 8192 MiB (8 GB)
 - **Used Memory**: 0 MiB
 
-### Processes
+##### Processes
 - **No running processes found**
 
-## Verify CUDA Compiler Version with `nvcc --version`
+#### Verify CUDA Compiler Version with `nvcc --version`
 
 ```plaintext
 nvcc: NVIDIA (R) Cuda compiler driver
@@ -83,7 +92,7 @@ Cuda compilation tools, release 11.7, V11.7.64
 Build cuda_11.7.r11.7/compiler.31294372_0
 ```
 
-# Step 3: Install `llama_cpp` and Other Packages
+### Step 3: Install `llama_cpp` and Other Packages
 
 In the VS Code terminal, run:
 
@@ -98,7 +107,7 @@ python -m pip install llama-cpp-python==0.2.7 --prefer-binary --extra-index-url=
 
 Reference: [private-gpt issue 1242](https://github.com/zylon-ai/private-gpt/issues/1242)
 
-# Tutorial 1: Run Your Inference Pipeline and Check for BLAS=1
+### Tutorial 1: Run Your Inference Pipeline and Check for BLAS=1
 
   ![Simple interface photo](img/simple_interface.png)
 
@@ -124,6 +133,19 @@ If you need to load a model larger than your VRAM, use these techniques:
   ```
 Different models require different prompting templates. For detailed guidance on mistral-7b prompting, refer to the [Prompting Guide](https://www.promptingguide.ai/models/mistral-7b).
 
-# Tutorial 2: Exposing your local LLM to the Public Internet
+### Tutorial 2: Exposing your local LLM to the Public Internet
 
-* Run "fastapi_app.py" & follow the instructions in the comments to install grok, to set up port forwarding from grok's public url to your local port 8000.
+* Run "fastapi_app.py" & follow the instructions in the comments to install grok (it also support Kubernetes), to set up port forwarding from grok's public url to your local port 8000.
+
+### Citing This Repository
+If you find this tutorial helpful, please consider citing this GitHub page:
+
+```markdown
+  @misc{A Tutorial on deploying a local LLM,
+    author = {Henry Luan},
+    title = {local-llm-inference: A FastAPI server to expose a local LLM to the public internet},
+    year = {2024},
+    howpublished = {\url{https://github.com/casualcomputer/local_llm}},
+  }
+```
+
