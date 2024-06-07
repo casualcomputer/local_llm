@@ -100,6 +100,8 @@ Reference: [private-gpt issue 1242](https://github.com/zylon-ai/private-gpt/issu
 
 # Step 4: Run Your Inference Pipeline and Check for BLAS=1
 
+![Simple interface photo](img/simple_interface.png)
+
 Ensure BLAS=1 appears in the output to confirm GPU acceleration. In experiments, inference time reduced from ~70 seconds to ~1-3 seconds due to GPU acceleration.
 
 ![Verify BLAS=1](img/blas_1.png)

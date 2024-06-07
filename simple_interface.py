@@ -6,7 +6,7 @@ import torch
 
 # Load the model
 # Replace with your model path
-model_path = "models/llava-v1.6-vicuna-13b.Q4_K_M.gguf"
+model_path = "models/llava-v1.6-mistral-7b.Q4_K_M.gguf"
 
 # Initialize the LLM with specific configurations
 llm = Llama(
@@ -63,7 +63,7 @@ Q: {user_input} A:  [/INST]"""
 
 # Set up the main window
 root = tk.Tk()
-root.title("Chat with LLaMA Model")
+root.title("Chat with mistral-7B Model")
 
 # Configure text tag styles for the chat history
 chat_history = scrolledtext.ScrolledText(root, height=20, width=80)
