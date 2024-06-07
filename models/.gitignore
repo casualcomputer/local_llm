@@ -1,0 +1,3 @@
+touch models/.gitignore
+*
+!.gitignore
