@@ -1,8 +1,7 @@
 from llama_cpp import Llama
 
 # Put the location of to the GGUF model that you've download from HuggingFace here
-# model_path = "models/llava-v1.6-mistral-7b.Q4_K_M.gguf"
-model_path = "models/llava-v1.6-vicuna-13b.Q4_K_M.gguf"
+model_path = "models/llava-v1.6-mistral-7b.Q4_K_M.gguf"
 llm = Llama(model_path=model_path)
 
 # Prompt creation

@@ -2,3 +2,4 @@ experiments/
 /models/*
 !/models/.gitignore
 hf_token.txt
+app.py

@@ -94,17 +94,17 @@ set FORCE_CMAKE=1
 python -m pip install llama-cpp-python==0.2.7 --prefer-binary --extra-index-url=https://jllllll.github.io/llama-cpp-python-cuBLAS-wheels/AVX2/cu117
 ```
 
-![Installation picture](img/cpp_install.png)
+  ![Installation picture](img/cpp_install.png)
 
 Reference: [private-gpt issue 1242](https://github.com/zylon-ai/private-gpt/issues/1242)
 
 # Step 4: Run Your Inference Pipeline and Check for BLAS=1
 
-![Simple interface photo](img/simple_interface.png)
+  ![Simple interface photo](img/simple_interface.png)
 
 Ensure BLAS=1 appears in the output to confirm GPU acceleration. In experiments, inference time reduced from ~70 seconds to ~1-3 seconds due to GPU acceleration.
 
-![Verify BLAS=1](img/blas_1.png)
+  ![Verify BLAS=1](img/blas_1.png)
 
 If you need to load a model larger than your VRAM, use these techniques:
 
@@ -122,3 +122,4 @@ If you need to load a model larger than your VRAM, use these techniques:
   ```python
   output = llm(..., max_tokens=512)
   ```
+Different models require different prompting templates. For detailed guidance on mistral-7b prompting, refer to the [Prompting Guide](https://www.promptingguide.ai/models/mistral-7b).
